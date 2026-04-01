@@ -93,10 +93,10 @@ const SAMPLE_TRANSACTIONS = [
 const SAMPLE_BUDGETS = [
   { category: 'Food', limit: 5000 },
   { category: 'Transport', limit: 5000 },
-  { category: 'Entertainment', limit: 3000 },
+  { category: 'Entertainment', limit: 5000 },
   { category: 'Shopping', limit: 10000 },
   { category: 'Bills', limit: 25000 },
-  { category: 'Health', limit: 2000 }
+  { category: 'Health', limit: 3000 }
 ];
 
 // Load transactions from localStorage

@@ -37,9 +37,9 @@ export default function Sidebar({ currentPage, onPageChange, viewMonth, viewYear
           <svg width="40" height="40" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <linearGradient id="logoGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style={{stopColor: '#a855f7', stopOpacity: 1}} />
-                <stop offset="50%" style={{stopColor: '#7c3aed', stopOpacity: 1}} />
-                <stop offset="100%" style={{stopColor: '#3b82f6', stopOpacity: 1}} />
+                <stop offset="0%" stopColor="#a855f7" stopOpacity="1" />
+                <stop offset="50%" stopColor="#7c3aed" stopOpacity="1" />
+                <stop offset="100%" stopColor="#3b82f6" stopOpacity="1" />
               </linearGradient>
               <filter id="logoGlow2">
                 <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
@@ -49,51 +49,12 @@ export default function Sidebar({ currentPage, onPageChange, viewMonth, viewYear
                 </feMerge>
               </filter>
             </defs>
-            
-            {/* Background rounded square */}
-            <rect
-              x="6"
-              y="6"
-              width="52"
-              height="52"
-              rx="12"
-              fill="url(#logoGradient2)"
-              filter="url(#logoGlow2)"
-            />
-            
-            {/* Wallet shape */}
+            <rect x="6" y="6" width="52" height="52" rx="12" fill="url(#logoGradient2)" filter="url(#logoGlow2)" />
             <g transform="translate(32, 32)">
-              {/* Main wallet body */}
-              <rect
-                x="-16"
-                y="-10"
-                width="32"
-                height="20"
-                rx="3"
-                fill="white"
-                opacity="0.95"
-              />
-              {/* Card slot */}
-              <rect
-                x="-14"
-                y="-6"
-                width="24"
-                height="4"
-                rx="1"
-                fill="url(#logoGradient2)"
-              />
-              {/* Money symbol */}
-              <text
-                x="0"
-                y="8"
-                fill="url(#logoGradient2)"
-                fontSize="16"
-                fontWeight="bold"
-                textAnchor="middle"
-                dominantBaseline="middle"
-              >
-                $
-              </text>
+              <rect x="-16" y="-10" width="32" height="20" rx="3" fill="white" opacity="0.95" />
+              <rect x="-14" y="-6" width="24" height="4" rx="1" fill="url(#logoGradient2)" />
+              <circle cx="0" cy="8" r="3" fill="url(#logoGradient2)" />
+              <path d="M -3 5 L 3 5 M 0 2 L 0 8" stroke="url(#logoGradient2)" strokeWidth="1.5" fill="none" strokeLinecap="round" />
             </g>
           </svg>
         </div>

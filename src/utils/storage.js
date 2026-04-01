@@ -101,36 +101,54 @@ const SAMPLE_BUDGETS = [
 
 // Load transactions from localStorage
 export const loadTransactions = () => {
-  const stored = localStorage.getItem('fn_tx');
-  
-  if (!stored || stored === '[]') {
-    // Initialize with sample data
-    const sampleData = SAMPLE_TRANSACTIONS;
-    localStorage.setItem('fn_tx', JSON.stringify(sampleData));
-    return sampleData;
-  }
-  
   try {
-    return JSON.parse(stored);
-  } catch {
+    const stored = localStorage.getItem('fn_tx');
+    
+    if (!stored) {
+      // Initialize with sample data on first load
+      localStorage.setItem('fn_tx', JSON.stringify(SAMPLE_TRANSACTIONS));
+      return SAMPLE_TRANSACTIONS;
+    }
+    
+    const parsed = JSON.parse(stored);
+    
+    // Ensure it's an array and has data
+    if (!Array.isArray(parsed) || parsed.length === 0) {
+      localStorage.setItem('fn_tx', JSON.stringify(SAMPLE_TRANSACTIONS));
+      return SAMPLE_TRANSACTIONS;
+    }
+    
+    return parsed;
+  } catch (error) {
+    console.error('Error loading transactions:', error);
+    localStorage.setItem('fn_tx', JSON.stringify(SAMPLE_TRANSACTIONS));
     return SAMPLE_TRANSACTIONS;
   }
 };
 
 // Load budgets from localStorage
 export const loadBudgets = () => {
-  const stored = localStorage.getItem('fn_bud');
-  
-  if (!stored || stored === '[]') {
-    // Initialize with sample budgets
-    const sampleBudgets = SAMPLE_BUDGETS;
-    localStorage.setItem('fn_bud', JSON.stringify(sampleBudgets));
-    return sampleBudgets;
-  }
-  
   try {
-    return JSON.parse(stored);
-  } catch {
+    const stored = localStorage.getItem('fn_bud');
+    
+    if (!stored) {
+      // Initialize with sample budgets on first load
+      localStorage.setItem('fn_bud', JSON.stringify(SAMPLE_BUDGETS));
+      return SAMPLE_BUDGETS;
+    }
+    
+    const parsed = JSON.parse(stored);
+    
+    // Ensure it's an array and has data
+    if (!Array.isArray(parsed) || parsed.length === 0) {
+      localStorage.setItem('fn_bud', JSON.stringify(SAMPLE_BUDGETS));
+      return SAMPLE_BUDGETS;
+    }
+    
+    return parsed;
+  } catch (error) {
+    console.error('Error loading budgets:', error);
+    localStorage.setItem('fn_bud', JSON.stringify(SAMPLE_BUDGETS));
     return SAMPLE_BUDGETS;
   }
 };

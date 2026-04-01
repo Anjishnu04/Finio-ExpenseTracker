@@ -1,9 +1,9 @@
 # 💰 Finio - Expense Tracking
 
-A modern, lightweight expense tracker built with **React** and **Vite**. Track your income, manage budgets, and visualize spending patterns with beautiful charts and analytics.
+A modern, lightweight expense tracker built with **React**. Track your income, manage budgets, and visualize spending patterns with beautiful charts and analytics.
 
 ![React](https://img.shields.io/badge/React-18.0-blue?logo=react)
-![Vite](https://img.shields.io/badge/Vite-8.0-purple?logo=vite)
+![React Scripts](https://img.shields.io/badge/Tooling-Create%20React%20App-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
 ## ✨ Features
@@ -43,7 +43,7 @@ A modern, lightweight expense tracker built with **React** and **Vite**. Track y
 
 4. **Open in browser**
    ```
-   http://localhost:5173
+   http://localhost:3000
    ```
 
 ### Build for Production
@@ -51,7 +51,7 @@ A modern, lightweight expense tracker built with **React** and **Vite**. Track y
 npm run build
 ```
 
-The optimized app will be in the `dist/` folder, ready to deploy.
+The optimized app will be in the `build/` folder, ready to deploy.
 
 ## 📁 Project Structure
 
@@ -77,11 +77,11 @@ finio-react/
 │   │   ├── categories.js        # Category definitions
 │   │   └── formatting.js        # Date/currency formatting
 │   ├── App.jsx                  # Main app component
-│   ├── main.jsx                 # React entry point
+│   ├── index.js                 # React entry point
 │   ├── App.css                  # Global styles
 │   └── index.css                # Base styles
 ├── package.json
-├── vite.config.js               # Vite configuration
+├── public/index.html            # HTML template for React scripts
 ├── eslint.config.js             # ESLint rules
 └── README.md
 ```
@@ -119,7 +119,7 @@ finio-react/
 ## 🛠️ Technologies Used
 
 - **React 18** - UI library for building user interfaces
-- **Vite 8** - Lightning-fast build tool and dev server
+- **Create React App (react-scripts)** - Build tool and development server
 - **JavaScript ES6+** - Modern JavaScript syntax
 - **Canvas API** - Creating dynamic charts and visualizations
 - **LocalStorage API** - Client-side data persistence
@@ -169,7 +169,7 @@ npm run build
 ### Deploy to Netlify
 ```bash
 npm run build
-# Drag & drop dist/ folder to Netlify, or connect GitHub repo
+# Drag & drop build/ folder to Netlify, or connect GitHub repo
 ```
 
 ### Deploy to GitHub Pages
@@ -182,13 +182,13 @@ npm run build
 
 - `npm run dev` - Start development server with hot reload
 - `npm run build` - Create optimized production build
-- `npm run preview` - Preview production build locally
-- `npm run lint` - Run ESLint to check code quality
+- `npm start` - Start development server with hot reload
+- `npm test` - Run tests in watch mode
 
 ## 🐛 Troubleshooting
 
 ### Port Already in Use
-If port 5173 is busy, Vite will automatically try the next port (5174, 5175, etc.)
+If port 3000 is busy, React scripts will prompt to use another port.
 
 ### Data Not Saving
 - Check browser LocalStorage is enabled
